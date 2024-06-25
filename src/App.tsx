@@ -1,6 +1,7 @@
 import './App.css';
 import ProfileBox from './components/ProfileBox';
 import Repositories from './components/Repositories';
+import Certificates from './components/Certificates';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
 
       <div className='main-content'>
         <Repositories />
+        <Certificates />
       </div>
     </div>
   );

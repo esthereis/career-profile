@@ -19,6 +19,7 @@ html {
 .main-content {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
 
 h1 {
@@ -119,7 +120,8 @@ h1 {
   align-items: center;
 }
 
-.repositories-container {
+.repositories-container,
+.certificates-container {
   width: 893px;
   align-content: center;
 }
@@ -135,4 +137,27 @@ button.slick-next:before {
 
 .slick-slide {
   width: 448px !important;
+}
+
+.course-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.course-title {
+  font-weight: 600;
+}
+
+.course-image {
+  height: 60px;
+  width: auto;
+  max-width: 60px;
 }

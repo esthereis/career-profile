@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { getRepos } from '../api/octokit';
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import { Fragment, useEffect, useState } from 'react';
 
 type Repository = {
@@ -44,8 +43,6 @@ export default function Repositories() {
       <h1 className='underline'>My Projects</h1>
 
       <div className='repositories-container slider-container'>
-        {/* <GoChevronLeft id='arrow-icon-left' size='40' /> */}
-
         <Slider {...settings}>
           {repositories?.map((repository: Repository) => (
             <Fragment key={repository.id}>
