@@ -5,7 +5,7 @@
 html {
   font-size: auto;
   background-color: aliceblue;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -60,6 +60,8 @@ h1 {
 
 .profile-picture {
   border-radius: 50%;
+  height: 180px;
+  width: auto;
 }
 
 .my-projects-container {
@@ -160,4 +162,9 @@ button.slick-next:before {
   height: 60px;
   width: auto;
   max-width: 60px;
+}
+
+.icon {
+  text-decoration: none;
+  color: inherit;
 }
