@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="container">
       <ProfileData src="https://cdn.lospec.com/gallery/pikachu-122671.png" />
-      <EditableProfileData />
 
       <div className="main-content">
         <Repositories />

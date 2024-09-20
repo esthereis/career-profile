@@ -1,4 +1,22 @@
-export default function EditableProfileData() {
+import { useState } from "react";
+import { DataType } from "./ProfileData";
+import DataInput from "./DataInput";
+
+type Props = {
+  save: (data: DataType) => void;
+};
+
+export default function EditableProfileData({ save }: Props) {
+  const [data, setData] = useState<DataType>({
+    src: "",
+    fullName: "",
+    position: "",
+    city: "",
+    linkedIn: "",
+    email: "",
+    github: "",
+  });
+
   return (
     <div className="editable-container">
       <img
@@ -8,29 +26,69 @@ export default function EditableProfileData() {
       />
 
       <form className="form-container">
-        <label htmlFor="first-name">Name:*</label>
-        <input type="text" name="firstName" id="first-name" />
+        <DataInput
+          label="Complete Name: *"
+          name="name"
+          id="name"
+          value={data.fullName}
+          dataOnChange={(value) => {
+            setData({ ...data, fullName: value });
+          }}
+        />
 
-        <label htmlFor="surname">Surname:*</label>
-        <input type="text" name="surname" id="surname" />
+        <DataInput
+          label="Position:*"
+          name="position"
+          id="position"
+          value={data.position}
+          dataOnChange={(value) => setData({ ...data, position: value })}
+        />
 
-        <label htmlFor="function">Function:*</label>
-        <input type="text" name="function" id="function" />
+        <DataInput
+          label="City:"
+          name="city"
+          id="city"
+          value={data.city}
+          dataOnChange={(value) => setData({ ...data, city: value })}
+        />
 
-        <label htmlFor="city">City:</label>
-        <input type="text" name="city" id="city" />
+        <DataInput
+          label="LinkedIn:"
+          name="linkedIn"
+          id="linkedIn"
+          value={data.linkedIn}
+          dataOnChange={(value) => setData({ ...data, linkedIn: value })}
+        />
 
-        <label htmlFor="linked-In">LinkedIn:</label>
-        <input type="text" name="linkedIn" id="linked-In" />
+        <DataInput
+          label="Github:"
+          name="github"
+          id="github"
+          value={data.github}
+          dataOnChange={(value) => setData({ ...data, github: value })}
+        />
 
-        <label htmlFor="github">Github:</label>
-        <input type="text" name="github" id="github" />
-
-        <label htmlFor="email">Email:</label>
-        <input type="text" name="email" id="email" />
+        <DataInput
+          label="Email:"
+          name="email"
+          id="email"
+          value={data.email}
+          dataOnChange={(value) => {
+            setData({ ...data, email: value });
+            console.log(data);
+          }}
+        />
 
         <label htmlFor="technologies">Technologies:</label>
         <input type="text" name="technologies" id="technologies" />
+
+        <button
+          onClick={(data) => {
+            save(data);
+          }}
+        >
+          Save
+        </button>
       </form>
     </div>
   );
