@@ -13,15 +13,7 @@ export type DataType = {
   github: string;
 };
 
-export default function ProfileData({
-  src,
-  fullName,
-  position,
-  city,
-  linkedIn,
-  email,
-  github,
-}: DataType) {
+export default function ProfileData({ src }: string) {
   const [editPressed, setEditPressed] = useState<boolean>(false);
   const [editedData, setEditedData] = useState<DataType>();
 

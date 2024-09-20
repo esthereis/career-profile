@@ -2,7 +2,6 @@ import "./App.css";
 import ProfileData from "./components/ProfileData";
 import Repositories from "./components/Repositories";
 import Certificates from "./components/Certificates";
-import EditableProfileData from "./components/EditableProfileData";
 
 function App() {
   return (

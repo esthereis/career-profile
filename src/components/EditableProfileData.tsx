@@ -83,7 +83,7 @@ export default function EditableProfileData({ save }: Props) {
         <input type="text" name="technologies" id="technologies" />
 
         <button
-          onClick={(data) => {
+          onClick={() => {
             save(data);
           }}
         >
