@@ -7,7 +7,7 @@ type Props = {
 
 export default function ProfileData({ src }: Props) {
   return (
-    <>
+    <div className="profile-box">
       <div className="data-container">
         <img src={src} alt="profile-picture" className="profile-picture" />
         <h1>Esther Reis</h1>
@@ -39,6 +39,6 @@ export default function ProfileData({ src }: Props) {
 
       <TechnologiesContainer />
       <FiEdit2 />
-    </>
+    </div>
   );
 }

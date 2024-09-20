@@ -168,3 +168,23 @@ button.slick-next:before {
   text-decoration: none;
   color: inherit;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-container input {
+  width: 50%;
+}
+
+.editable-container {
+  background-color: rgb(184, 174, 192);
+
+  height: 100vh;
+  width: 80%;
+
+  position: absolute;
+  z-index: 1;
+}

@@ -1,16 +1,13 @@
-import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
-import TechnologiesContainer from "./TechnologiesContainer";
-
 export default function EditableProfileData() {
   return (
-    <div className="data-container">
+    <div className="editable-container">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/2048px-Circle-icons-camera.svg.png"
         alt="profile-picture"
         className="profile-picture"
       />
 
-      <form>
+      <form className="form-container">
         <label htmlFor="first-name">Name:*</label>
         <input type="text" name="firstName" id="first-name" />
 
