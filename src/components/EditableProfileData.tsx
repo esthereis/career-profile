@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DataType } from "./ProfileData";
 import DataInput from "./DataInput";
+import Technologies from "./Technologies";
 
 type Props = {
   save: (data: DataType) => void;
@@ -79,8 +80,7 @@ export default function EditableProfileData({ save }: Props) {
           }}
         />
 
-        <label htmlFor="technologies">Technologies:</label>
-        <input type="text" name="technologies" id="technologies" />
+        <Technologies />
 
         <button
           onClick={() => {
