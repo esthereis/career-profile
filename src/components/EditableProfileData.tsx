@@ -16,6 +16,7 @@ export default function EditableProfileData({ save }: Props) {
     linkedIn: "",
     email: "",
     github: "",
+    technologies: [],
   });
 
   return (
@@ -80,7 +81,9 @@ export default function EditableProfileData({ save }: Props) {
           }}
         />
 
-        <Technologies />
+        <Technologies
+          dataOnChange={(techs) => setData({ ...data, technologies: techs })}
+        />
 
         <button
           onClick={() => {

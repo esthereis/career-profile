@@ -1,7 +1,11 @@
 import { useState } from "react";
 import TechnologiesContainer from "./TechnologiesContainer";
 
-export default function Technologies() {
+type Props = {
+  dataOnChange: (technologies: string[]) => void;
+};
+
+export default function Technologies({ dataOnChange }: Props) {
   const [technologies, setTechnologies] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   return (
@@ -20,11 +24,12 @@ export default function Technologies() {
               ...prevTechnology,
               e.target.value,
             ]);
+            dataOnChange([...technologies, inputValue]);
             setInputValue("");
           }
         }}
       />
-      {technologies && <TechnologiesContainer technologies={technologies} />}
+      <TechnologiesContainer technologies={technologies} />
     </div>
   );
 }

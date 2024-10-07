@@ -11,6 +11,7 @@ export type DataType = {
   linkedIn: string;
   email: string;
   github: string;
+  technologies?: string[];
 };
 
 export default function ProfileData({ src }: string) {
@@ -39,9 +40,8 @@ export default function ProfileData({ src }: string) {
           <a href={editedData?.github} target="_blank" className="icon">
             <FiGithub />
           </a>
+          <TechnologiesContainer technologies={editedData?.technologies} />
         </div>
-
-        <TechnologiesContainer />
 
         <button
           onClick={() => {
