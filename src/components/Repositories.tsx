@@ -1,9 +1,9 @@
-import RepositoryElement from './RepositoryElement';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { getRepos } from '../api/octokit';
-import { Fragment, useEffect, useState } from 'react';
+import Repository from "./Repository";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { getRepos } from "../api/octokit";
+import { Fragment, useEffect, useState } from "react";
 
 type Repository = {
   id: number;
@@ -25,7 +25,7 @@ type SlickSettings = {
 export default function Repositories() {
   const [repositories, setRepositories] = useState();
   useEffect(() => {
-    getRepos().then(data => {
+    getRepos().then((data) => {
       setRepositories(data);
     });
   }, []);
@@ -35,18 +35,18 @@ export default function Repositories() {
     infinite: true,
     speed: 500,
     slidesToShow: 2,
-    slidesToScroll: 2
+    slidesToScroll: 2,
   };
 
   return (
-    <div className='my-projects-container'>
-      <h1 className='underline'>My Projects</h1>
+    <div className="my-projects-container">
+      <h1 className="underline">My Projects</h1>
 
-      <div className='repositories-container slider-container'>
+      <div className="repositories-container slider-container">
         <Slider {...settings}>
           {repositories?.map((repository: Repository) => (
             <Fragment key={repository.id}>
-              <RepositoryElement
+              <Repository
                 description={repository.description}
                 name={repository.name}
                 language={repository.language}

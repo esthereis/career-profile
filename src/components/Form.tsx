@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { DataType } from "./ProfileData";
-import DataInput from "./DataInput";
-import Technologies from "./Technologies";
+import { DataType } from "../SideProfile";
+import Input from "./Input";
+import TechnologyForm from "./TechnologyForm";
 
 type Props = {
   save: (data: DataType) => void;
 };
 
-export default function EditableProfileData({ save }: Props) {
+export default function Form({ save }: Props) {
   const [data, setData] = useState<DataType>({
     src: "",
     fullName: "",
@@ -28,7 +28,7 @@ export default function EditableProfileData({ save }: Props) {
       />
 
       <form className="form-container">
-        <DataInput
+        <Input
           label="Complete Name: *"
           name="name"
           id="name"
@@ -38,7 +38,7 @@ export default function EditableProfileData({ save }: Props) {
           }}
         />
 
-        <DataInput
+        <Input
           label="Position:*"
           name="position"
           id="position"
@@ -46,7 +46,7 @@ export default function EditableProfileData({ save }: Props) {
           dataOnChange={(value) => setData({ ...data, position: value })}
         />
 
-        <DataInput
+        <Input
           label="City:"
           name="city"
           id="city"
@@ -54,26 +54,29 @@ export default function EditableProfileData({ save }: Props) {
           dataOnChange={(value) => setData({ ...data, city: value })}
         />
 
-        <DataInput
+        <Input
           label="LinkedIn:"
           name="linkedIn"
           id="linkedIn"
+          placeholder="Profile link (e.g., linkedin.com/in/example)"
           value={data.linkedIn}
           dataOnChange={(value) => setData({ ...data, linkedIn: value })}
         />
 
-        <DataInput
+        <Input
           label="Github:"
           name="github"
           id="github"
+          placeholder="Profile link (e.g., github.com/example)"
           value={data.github}
           dataOnChange={(value) => setData({ ...data, github: value })}
         />
 
-        <DataInput
+        <Input
           label="Email:"
           name="email"
           id="email"
+          placeholder="yourname@example.com"
           value={data.email}
           dataOnChange={(value) => {
             setData({ ...data, email: value });
@@ -81,7 +84,8 @@ export default function EditableProfileData({ save }: Props) {
           }}
         />
 
-        <Technologies
+        <TechnologyForm
+          placeholder="Type a technology and press Enter."
           dataOnChange={(techs) => setData({ ...data, technologies: techs })}
         />
 

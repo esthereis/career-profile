@@ -2,14 +2,16 @@ type Props = {
   label: string;
   name: string;
   id: string;
+  placeholder?: string;
   value: string;
   dataOnChange: (value: string) => void;
 };
 
-export default function DataInput({
+export default function Input({
   label,
   name,
   id,
+  placeholder,
   value,
   dataOnChange,
 }: Props) {
@@ -20,6 +22,7 @@ export default function DataInput({
         type="text"
         name={name}
         id={id}
+        placeholder={placeholder}
         value={value}
         onChange={(e) => {
           dataOnChange(e.target.value);

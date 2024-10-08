@@ -1,7 +1,7 @@
 import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
-import TechnologiesContainer from "./TechnologiesContainer";
+import Technologies from "./components/Technologies";
 import { useState } from "react";
-import EditableProfileData from "./EditableProfileData";
+import Form from "./components/Form";
 
 export type DataType = {
   src: string;
@@ -14,7 +14,7 @@ export type DataType = {
   technologies?: string[];
 };
 
-export default function ProfileData({ src }: string) {
+export default function SideProfile({ src }: string) {
   const [editPressed, setEditPressed] = useState<boolean>(false);
   const [editedData, setEditedData] = useState<DataType>();
 
@@ -40,7 +40,7 @@ export default function ProfileData({ src }: string) {
           <a href={editedData?.github} target="_blank" className="icon">
             <FiGithub />
           </a>
-          <TechnologiesContainer technologies={editedData?.technologies} />
+          <Technologies technologies={editedData?.technologies} />
         </div>
 
         <button
@@ -53,7 +53,7 @@ export default function ProfileData({ src }: string) {
         </button>
       </div>
       {editPressed && (
-        <EditableProfileData
+        <Form
           save={(data) => {
             setEditedData(data);
             setEditPressed(false);
