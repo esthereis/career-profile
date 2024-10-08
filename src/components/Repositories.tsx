@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { getRepos } from "../api/octokit";
 import { Fragment, useEffect, useState } from "react";
+import "../styles/repository.css";
+import "../styles/slick-carousel.css";
 
 type Repository = {
   id: number;
@@ -39,10 +41,10 @@ export default function Repositories() {
   };
 
   return (
-    <div className="my-projects-container">
+    <div className="repositories-list">
       <h1 className="underline">My Projects</h1>
 
-      <div className="repositories-container slider-container">
+      <div>
         <Slider {...settings}>
           {repositories?.map((repository: Repository) => (
             <Fragment key={repository.id}>

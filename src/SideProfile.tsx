@@ -2,9 +2,9 @@ import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
 import Technologies from "./components/Technologies";
 import { useState } from "react";
 import Form from "./components/Form";
+import "./styles/profile.css";
 
 export type DataType = {
-  src: string;
   fullName: string;
   position: string;
   city: string;
@@ -14,21 +14,25 @@ export type DataType = {
   technologies?: string[];
 };
 
-export default function SideProfile({ src }: string) {
+export default function SideProfile() {
   const [editPressed, setEditPressed] = useState<boolean>(false);
   const [editedData, setEditedData] = useState<DataType>();
 
   return (
-    <div className="profile-box">
-      <div className="data-container">
+    <div className="profile">
+      <div className="data">
         <div>
-          <img src={src} alt="profile-picture" className="profile-picture" />
+          <img
+            src="https://cdn.lospec.com/gallery/pikachu-122671.png"
+            alt="profile-picture"
+            className="profile-picture"
+          />
           <h1>{editedData?.fullName}</h1>
           <p> {editedData?.position}</p>
           <p>{editedData?.city}</p>
         </div>
 
-        <div className="icons-line">
+        <div>
           <a href={editedData?.linkedIn} target="_blank" className="icon">
             <FiLinkedin />
           </a>

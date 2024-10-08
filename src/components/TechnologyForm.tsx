@@ -10,7 +10,7 @@ export default function TechnologyForm({ OnChange, placeholder }: Props) {
   const [technologies, setTechnologies] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   return (
-    <div className="tech-container">
+    <div className="tech-form">
       <label htmlFor="technologies">Technologies:</label>
       <input
         type="text"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { DataType } from "../SideProfile";
 import Input from "./Input";
 import TechnologyForm from "./TechnologyForm";
+import "../styles/form.css";
 
 type Props = {
   save: (data: DataType) => void;
@@ -9,7 +10,6 @@ type Props = {
 
 export default function Form({ save }: Props) {
   const [data, setData] = useState<DataType>({
-    src: "",
     fullName: "",
     position: "",
     city: "",
@@ -20,14 +20,8 @@ export default function Form({ save }: Props) {
   });
 
   return (
-    <div className="editable-container">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/2048px-Circle-icons-camera.svg.png"
-        alt="profile-picture"
-        className="profile-picture"
-      />
-
-      <form className="form-container">
+    <div className="form-container">
+      <form className="form">
         <Input
           label="Complete Name: *"
           name="name"

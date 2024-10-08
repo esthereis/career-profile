@@ -6,7 +6,7 @@ import SideProfile from "./SideProfile";
 function App() {
   return (
     <div className="container">
-      <SideProfile src="https://cdn.lospec.com/gallery/pikachu-122671.png" />
+      <SideProfile />
 
       <div className="main-content">
         <Repositories />
