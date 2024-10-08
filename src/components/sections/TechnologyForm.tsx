@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Technologies from "./Technologies";
+import Technologies from "../common/Technologies";
+import "../../styles/technology.css";
 
 type Props = {
   OnChange: (technologies: string[]) => void;

@@ -1,8 +1,8 @@
 import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
-import Technologies from "./components/Technologies";
+import Technologies from "../common/Technologies";
 import { useState } from "react";
-import Form from "./components/Form";
-import "./styles/profile.css";
+import Form from "./Form";
+import "../../styles/profile.css";
 
 export type DataType = {
   fullName: string;

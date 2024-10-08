@@ -1,11 +1,11 @@
-import Repository from "./Repository";
+import Repository from "../common/Repository";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { getRepos } from "../api/octokit";
+import { getRepos } from "../../api/octokit";
 import { Fragment, useEffect, useState } from "react";
-import "../styles/repository.css";
-import "../styles/slick-carousel.css";
+import "../../styles/repository.css";
+import "../../styles/slick-carousel.css";
 
 type Repository = {
   id: number;

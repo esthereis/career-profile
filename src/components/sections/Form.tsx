@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { DataType } from "../SideProfile";
-import Input from "./Input";
+import { DataType } from "./SideProfile";
+import Input from "../common/Input";
 import TechnologyForm from "./TechnologyForm";
-import "../styles/form.css";
+import "../../styles/form.css";
 
 type Props = {
   save: (data: DataType) => void;

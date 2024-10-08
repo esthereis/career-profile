@@ -1,4 +1,4 @@
-import "../styles/technology.css";
+import "../../styles/technology.css";
 
 type Props = {
   technologies: string[];

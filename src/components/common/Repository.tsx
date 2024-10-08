@@ -1,6 +1,6 @@
 import { FiBook, FiCircle, FiStar } from "react-icons/fi";
 import { GoRepoForked } from "react-icons/go";
-import "../styles/repository.css";
+import "../../styles/repository.css";
 
 type RepositoryProps = {
   name: string;

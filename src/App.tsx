@@ -1,7 +1,7 @@
 import "./App.css";
-import Repositories from "./components/Repositories";
-import Certificates from "./components/Certificates";
-import SideProfile from "./SideProfile";
+import Repositories from "./components/sections/Repositories";
+import Certificates from "./components/sections/Certificates";
+import SideProfile from "./components/sections/SideProfile";
 
 function App() {
   return (

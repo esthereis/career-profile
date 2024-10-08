@@ -1,6 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../styles/certificate.css";
+import "../../styles/certificate.css";
 
 type Props = {
   src: string;

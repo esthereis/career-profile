@@ -1,7 +1,7 @@
-import Certificate from "./Certificate";
+import Certificate from "../common/Certificate";
 import Slider from "react-slick";
-import "../styles/certificate.css";
-import "../styles/slick-carousel.css";
+import "../../styles/certificate.css";
+import "../../styles/slick-carousel.css";
 
 type SlickSettings = {
   dots: boolean;
