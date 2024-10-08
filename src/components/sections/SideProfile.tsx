@@ -1,18 +1,9 @@
-import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
-import Technologies from "../common/Technologies";
-import { useState } from "react";
-import Form from "./Form";
 import "../../styles/profile.css";
-
-export type DataType = {
-  fullName: string;
-  position: string;
-  city: string;
-  linkedIn: string;
-  email: string;
-  github: string;
-  technologies?: string[];
-};
+import Technologies from "../common/Technologies";
+import Form from "./Form";
+import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
+import { useState } from "react";
+import { DataType } from "../../types/DataType";
 
 export default function SideProfile() {
   const [editPressed, setEditPressed] = useState<boolean>(false);

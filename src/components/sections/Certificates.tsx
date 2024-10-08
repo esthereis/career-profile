@@ -1,15 +1,8 @@
-import Certificate from "../common/Certificate";
-import Slider from "react-slick";
 import "../../styles/certificate.css";
 import "../../styles/slick-carousel.css";
-
-type SlickSettings = {
-  dots: boolean;
-  infinite: boolean;
-  speed: number;
-  slidesToShow: number;
-  slidesToScroll: number;
-};
+import Certificate from "../common/Certificate";
+import Slider from "react-slick";
+import { SlickSettings } from "../../types/SlickSettings";
 
 export default function Certificates() {
   const settings: SlickSettings = {

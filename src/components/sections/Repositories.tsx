@@ -1,11 +1,12 @@
-import Repository from "../common/Repository";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { getRepos } from "../../api/octokit";
-import { Fragment, useEffect, useState } from "react";
 import "../../styles/repository.css";
 import "../../styles/slick-carousel.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Repository from "../common/Repository";
+import Slider from "react-slick";
+import { getRepos } from "../../api/octokit";
+import { Fragment, useEffect, useState } from "react";
+import { SlickSettings } from "../../types/SlickSettings";
 
 type Repository = {
   id: number;
@@ -14,14 +15,6 @@ type Repository = {
   language: string;
   stargazers_count: number;
   forks: number;
-};
-
-type SlickSettings = {
-  dots: boolean;
-  infinite: boolean;
-  speed: number;
-  slidesToShow: number;
-  slidesToScroll: number;
 };
 
 export default function Repositories() {
