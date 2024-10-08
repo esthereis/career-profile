@@ -4,7 +4,7 @@ type Props = {
   id: string;
   placeholder?: string;
   value: string;
-  dataOnChange: (value: string) => void;
+  OnChange: (value: string) => void;
 };
 
 export default function Input({
@@ -13,7 +13,7 @@ export default function Input({
   id,
   placeholder,
   value,
-  dataOnChange,
+  OnChange,
 }: Props) {
   return (
     <>
@@ -25,7 +25,7 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         onChange={(e) => {
-          dataOnChange(e.target.value);
+          OnChange(e.target.value);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {

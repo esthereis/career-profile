@@ -33,7 +33,7 @@ export default function Form({ save }: Props) {
           name="name"
           id="name"
           value={data.fullName}
-          dataOnChange={(value) => {
+          OnChange={(value) => {
             setData({ ...data, fullName: value });
           }}
         />
@@ -43,7 +43,7 @@ export default function Form({ save }: Props) {
           name="position"
           id="position"
           value={data.position}
-          dataOnChange={(value) => setData({ ...data, position: value })}
+          OnChange={(value) => setData({ ...data, position: value })}
         />
 
         <Input
@@ -51,7 +51,7 @@ export default function Form({ save }: Props) {
           name="city"
           id="city"
           value={data.city}
-          dataOnChange={(value) => setData({ ...data, city: value })}
+          OnChange={(value) => setData({ ...data, city: value })}
         />
 
         <Input
@@ -60,7 +60,7 @@ export default function Form({ save }: Props) {
           id="linkedIn"
           placeholder="Profile link (e.g., linkedin.com/in/example)"
           value={data.linkedIn}
-          dataOnChange={(value) => setData({ ...data, linkedIn: value })}
+          OnChange={(value) => setData({ ...data, linkedIn: value })}
         />
 
         <Input
@@ -69,7 +69,7 @@ export default function Form({ save }: Props) {
           id="github"
           placeholder="Profile link (e.g., github.com/example)"
           value={data.github}
-          dataOnChange={(value) => setData({ ...data, github: value })}
+          OnChange={(value) => setData({ ...data, github: value })}
         />
 
         <Input
@@ -78,7 +78,7 @@ export default function Form({ save }: Props) {
           id="email"
           placeholder="yourname@example.com"
           value={data.email}
-          dataOnChange={(value) => {
+          OnChange={(value) => {
             setData({ ...data, email: value });
             console.log(data);
           }}
@@ -86,7 +86,7 @@ export default function Form({ save }: Props) {
 
         <TechnologyForm
           placeholder="Type a technology and press Enter."
-          dataOnChange={(techs) => setData({ ...data, technologies: techs })}
+          OnChange={(techs) => setData({ ...data, technologies: techs })}
         />
 
         <button

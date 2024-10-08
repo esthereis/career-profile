@@ -2,11 +2,11 @@ import { useState } from "react";
 import Technologies from "./Technologies";
 
 type Props = {
-  dataOnChange: (technologies: string[]) => void;
+  OnChange: (technologies: string[]) => void;
   placeholder: string;
 };
 
-export default function TechnologyForm({ dataOnChange, placeholder }: Props) {
+export default function TechnologyForm({ OnChange, placeholder }: Props) {
   const [technologies, setTechnologies] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   return (
@@ -26,7 +26,7 @@ export default function TechnologyForm({ dataOnChange, placeholder }: Props) {
               ...prevTechnology,
               e.target.value,
             ]);
-            dataOnChange([...technologies, inputValue]);
+            OnChange([...technologies, inputValue]);
             setInputValue("");
           }
         }}
