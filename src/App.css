@@ -12,8 +12,6 @@ html {
   display: flex;
   flex-direction: row;
   gap: 4rem;
-
-  margin: 1rem 0 1rem 1rem;
 }
 
 .main-content {

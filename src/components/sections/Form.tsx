@@ -21,6 +21,7 @@ export default function Form({ save }: Props) {
 
   return (
     <div className="form-container">
+      <h1>Edit Profile:</h1>
       <form className="form">
         <Input
           label="Complete Name: *"
@@ -84,6 +85,7 @@ export default function Form({ save }: Props) {
         />
 
         <button
+          className="saveButton"
           onClick={() => {
             save(data);
           }}
