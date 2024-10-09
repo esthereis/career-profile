@@ -32,7 +32,7 @@ export default function TechnologyForm({ OnChange, placeholder }: Props) {
           }
         }}
       />
-      <Technologies technologies={technologies} />
+      <Technologies technologies={technologies} className={"tech-list"} />
     </div>
   );
 }
