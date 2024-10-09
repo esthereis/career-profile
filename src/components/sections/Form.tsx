@@ -3,6 +3,7 @@ import Input from "../common/Input";
 import TechnologyForm from "./TechnologyForm";
 import { useState } from "react";
 import { DataType } from "../../types/DataType";
+import { FiX } from "react-icons/fi";
 
 type Props = {
   save: (data: DataType) => void;
@@ -21,7 +22,20 @@ export default function Form({ save }: Props) {
 
   return (
     <div className="form-container">
-      <h1>Edit Profile:</h1>
+      <div className="form-header">
+        <h1>Edit Profile:</h1>
+
+        <div
+          className="close-icon"
+          onClick={() => {
+            save(data);
+          }}
+        >
+          <FiX size={20} />
+        </div>
+      </div>
+      <hr className="header-underline" />
+
       <form className="form">
         <Input
           label="Complete Name: *"
