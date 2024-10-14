@@ -5,13 +5,16 @@ import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
 import { useState } from "react";
 import { DataType } from "../../types/DataType";
 import { IoMdColorPalette } from "react-icons/io";
+import ColorModal from "./ColorModal";
 
 export default function SideProfile() {
   const [editPressed, setEditPressed] = useState<boolean>(false);
   const [editedData, setEditedData] = useState<DataType>();
+  const [colorModalPressed, setColorModalPressed] = useState<boolean>(false);
+  const [backgroundColor, setBackgroundColor] = useState<string | undefined>();
 
   return (
-    <div className="profile">
+    <div style={{ backgroundColor: backgroundColor }} className="profile">
       <div className="data">
         <div className="text">
           <img
@@ -53,7 +56,16 @@ export default function SideProfile() {
           <FiEdit2 />
         </button>
 
-        <button className="button button-color">
+        {colorModalPressed && (
+          <ColorModal
+            changeBackgroundColor={(color) => setBackgroundColor(color)}
+            closeButton={() => setColorModalPressed(false)}
+          />
+        )}
+        <button
+          className="button button-color"
+          onClick={() => setColorModalPressed(!colorModalPressed)}
+        >
           <IoMdColorPalette size={20} />
         </button>
       </div>
