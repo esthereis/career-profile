@@ -75,7 +75,7 @@
 }
 
 .button:hover {
-  opacity: 150%;
+  background-color: rgb(208, 212, 216);
   cursor: pointer;
 }
 

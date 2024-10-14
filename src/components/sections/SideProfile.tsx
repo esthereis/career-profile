@@ -54,7 +54,6 @@ export default function SideProfile() {
         </button>
 
         <button className="button button-color">
-          {" "}
           <IoMdColorPalette size={20} />
         </button>
       </div>
