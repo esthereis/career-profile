@@ -29,17 +29,22 @@ export default function SideProfile() {
 
         {editedData && (
           <div className="icons">
-            <a href={editedData?.linkedIn} target="_blank" className="icon">
-              <FiLinkedin />
-            </a>
+            {editedData.linkedIn && (
+              <a href={editedData?.linkedIn} target="_blank" className="icon">
+                <FiLinkedin />
+              </a>
+            )}
 
-            <a href={editedData?.email} target="_blank" className="icon">
-              <FiMail />
-            </a>
-
-            <a href={editedData?.github} target="_blank" className="icon">
-              <FiGithub />
-            </a>
+            {editedData.email && (
+              <a href={editedData?.email} target="_blank" className="icon">
+                <FiMail />
+              </a>
+            )}
+            {editedData.github && (
+              <a href={editedData?.github} target="_blank" className="icon">
+                <FiGithub />
+              </a>
+            )}
           </div>
         )}
 
