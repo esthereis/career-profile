@@ -1,7 +1,7 @@
 import "../../styles/technology.css";
 
 type Props = {
-  technologies: string[];
+  technologies: string[] | undefined;
   className: string;
 };
 

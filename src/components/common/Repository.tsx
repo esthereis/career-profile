@@ -2,7 +2,7 @@ import { FiBook, FiCircle, FiStar } from "react-icons/fi";
 import { GoRepoForked } from "react-icons/go";
 import "../../styles/repository.css";
 
-type RepositoryProps = {
+type Props = {
   name: string;
   description: string;
   stars: number;
@@ -16,7 +16,7 @@ export default function Repository({
   fork,
   stars,
   language,
-}: RepositoryProps) {
+}: Props) {
   return (
     <div className="repository-card">
       <div className="repository-title">

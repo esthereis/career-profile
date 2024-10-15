@@ -2,20 +2,12 @@ import "../../styles/repository.css";
 import "../../styles/slick-carousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { RepositoryType } from "../../types/RepositoryType";
 import Repository from "../common/Repository";
 import Slider from "react-slick";
 import { getRepos } from "../../api/octokit";
 import { Fragment, useEffect, useState } from "react";
 import { SlickSettings } from "../../types/SlickSettings";
-
-type Repository = {
-  id: number;
-  description: string;
-  name: string;
-  language: string;
-  stargazers_count: number;
-  forks: number;
-};
 
 export default function Repositories() {
   const [repositories, setRepositories] = useState();
@@ -39,7 +31,7 @@ export default function Repositories() {
 
       <div>
         <Slider {...settings}>
-          {repositories?.map((repository: Repository) => (
+          {repositories?.map((repository: RepositoryType) => (
             <Fragment key={repository.id}>
               <Repository
                 description={repository.description}

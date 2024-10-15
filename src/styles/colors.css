@@ -24,4 +24,10 @@
   height: 1rem;
   width: 1rem;
   border: none;
+
+  cursor: pointer;
+}
+
+.squares:hover {
+  opacity: 60%;
 }

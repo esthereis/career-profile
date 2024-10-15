@@ -1,33 +1,32 @@
 import { useState } from "react";
 import Technologies from "../common/Technologies";
 import "../../styles/technology.css";
+import Input from "../common/Input";
 
 type Props = {
-  OnChange: (technologies: string[]) => void;
+  onChange: (technologies: string[]) => void;
   placeholder: string;
 };
 
-export default function TechnologyForm({ OnChange, placeholder }: Props) {
+export default function TechnologyForm({ onChange, placeholder }: Props) {
   const [technologies, setTechnologies] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   return (
     <div className="tech-form">
-      <label htmlFor="technologies">Technologies:</label>
-      <input
-        type="text"
+      <Input
+        label="Technologies:"
         name="technologies"
         id="technologies"
         placeholder={placeholder}
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(value) => setInputValue(value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            e.preventDefault();
             setTechnologies((prevTechnology) => [
               ...prevTechnology,
-              e.target.value,
+              inputValue,
             ]);
-            OnChange([...technologies, inputValue]);
+            onChange([...technologies, inputValue]);
             setInputValue("");
           }
         }}

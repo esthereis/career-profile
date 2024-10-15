@@ -4,7 +4,8 @@ type Props = {
   id: string;
   placeholder?: string;
   value: string;
-  OnChange: (value: string) => void;
+  onChange: (value: string) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export default function Input({
@@ -13,7 +14,8 @@ export default function Input({
   id,
   placeholder,
   value,
-  OnChange,
+  onChange,
+  onKeyDown,
 }: Props) {
   return (
     <>
@@ -25,12 +27,13 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         onChange={(e) => {
-          OnChange(e.target.value);
+          onChange(e.target.value);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             e.preventDefault();
           }
+          onKeyDown?.(e);
         }}
       />
     </>

@@ -1,6 +1,6 @@
 import "../../styles/profile.css";
 import Technologies from "../common/Technologies";
-import Form from "./Form";
+import ProfileForm from "./ProfileForm";
 import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
 import { useState } from "react";
 import { DataType } from "../../types/DataType";
@@ -70,7 +70,7 @@ export default function SideProfile() {
         </button>
       </div>
       {editPressed && (
-        <Form
+        <ProfileForm
           save={(data) => {
             setEditedData(data);
             setEditPressed(false);

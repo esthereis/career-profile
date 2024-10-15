@@ -9,7 +9,7 @@ type Props = {
   save: (data: DataType) => void;
 };
 
-export default function Form({ save }: Props) {
+export default function ProfileForm({ save }: Props) {
   const [data, setData] = useState<DataType>({
     fullName: "",
     position: "",
@@ -42,7 +42,7 @@ export default function Form({ save }: Props) {
           name="name"
           id="name"
           value={data.fullName}
-          OnChange={(value) => {
+          onChange={(value) => {
             setData({ ...data, fullName: value });
           }}
         />
@@ -52,7 +52,7 @@ export default function Form({ save }: Props) {
           name="position"
           id="position"
           value={data.position}
-          OnChange={(value) => setData({ ...data, position: value })}
+          onChange={(value) => setData({ ...data, position: value })}
         />
 
         <Input
@@ -60,7 +60,7 @@ export default function Form({ save }: Props) {
           name="city"
           id="city"
           value={data.city}
-          OnChange={(value) => setData({ ...data, city: value })}
+          onChange={(value) => setData({ ...data, city: value })}
         />
 
         <Input
@@ -69,7 +69,7 @@ export default function Form({ save }: Props) {
           id="linkedIn"
           placeholder="Profile link (e.g., linkedin.com/in/example)"
           value={data.linkedIn}
-          OnChange={(value) => setData({ ...data, linkedIn: value })}
+          onChange={(value) => setData({ ...data, linkedIn: value })}
         />
 
         <Input
@@ -78,7 +78,7 @@ export default function Form({ save }: Props) {
           id="github"
           placeholder="Profile link (e.g., github.com/example)"
           value={data.github}
-          OnChange={(value) => setData({ ...data, github: value })}
+          onChange={(value) => setData({ ...data, github: value })}
         />
 
         <Input
@@ -87,7 +87,7 @@ export default function Form({ save }: Props) {
           id="email"
           placeholder="yourname@example.com"
           value={data.email}
-          OnChange={(value) => {
+          onChange={(value) => {
             setData({ ...data, email: value });
             console.log(data);
           }}
@@ -95,7 +95,7 @@ export default function Form({ save }: Props) {
 
         <TechnologyForm
           placeholder="Type a technology and press Enter."
-          OnChange={(techs) => setData({ ...data, technologies: techs })}
+          onChange={(techs) => setData({ ...data, technologies: techs })}
         />
 
         <button
