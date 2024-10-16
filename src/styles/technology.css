@@ -1,0 +1,10 @@
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 48px;
+}
+
+.tech-form {
+  display: flex;
+  flex-direction: column;
+}

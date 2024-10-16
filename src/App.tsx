@@ -1,14 +1,16 @@
-import './App.css';
-import ProfileBox from './components/ProfileBox';
-import Repositories from './components/Repositories';
+import "./App.css";
+import Repositories from "./components/sections/Repositories";
+import Certificates from "./components/sections/Certificates";
+import SideProfile from "./components/sections/SideProfile";
 
 function App() {
   return (
-    <div className='container'>
-      <ProfileBox src='https://cdn.lospec.com/gallery/pikachu-122671.png' />
+    <div className="container">
+      <SideProfile />
 
-      <div className='main-content'>
+      <div className="main-content">
         <Repositories />
+        <Certificates />
       </div>
     </div>
   );

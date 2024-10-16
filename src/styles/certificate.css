@@ -1,0 +1,27 @@
+.certificate-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.certificate-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.certificate-title {
+  font-weight: 600;
+}
+
+.certificate-image {
+  height: 60px;
+  width: auto;
+  max-width: 60px;
+}
+
+.certificates-container {
+  width: 893px;
+  align-content: center;
+}
