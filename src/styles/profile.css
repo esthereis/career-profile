@@ -14,12 +14,6 @@
   font-weight: 400;
 }
 
-.profile-picture {
-  border-radius: 50%;
-  height: 180px;
-  width: auto;
-}
-
 .full-name {
   margin: 0.8rem 0;
 }
