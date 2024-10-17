@@ -1,11 +1,12 @@
 import "../../styles/profile.css";
 import Technologies from "../common/Technologies";
 import ProfileForm from "./ProfileForm";
+import ProfileImage from "./ProfileImage";
+import ColorModal from "./ColorModal";
 import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
 import { useState } from "react";
 import { DataType } from "../../types/DataType";
 import { IoMdColorPalette } from "react-icons/io";
-import ColorModal from "./ColorModal";
 
 export default function SideProfile() {
   const [editPressed, setEditPressed] = useState<boolean>(false);
@@ -17,11 +18,8 @@ export default function SideProfile() {
     <div style={{ backgroundColor: backgroundColor }} className="profile">
       <div className="data">
         <div className="text">
-          <img
-            src="https://cdn.lospec.com/gallery/pikachu-122671.png"
-            alt="profile-picture"
-            className="profile-picture"
-          />
+          <ProfileImage />
+
           <h1 className="full-name">{editedData?.fullName}</h1>
           <p> {editedData?.position}</p>
           <p>{editedData?.city}</p>
