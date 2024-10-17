@@ -16,10 +16,9 @@ export default function SideProfile() {
 
   return (
     <div style={{ backgroundColor: backgroundColor }} className="profile">
+      <ProfileImage />
       <div className="data">
         <div className="text">
-          <ProfileImage />
-
           <h1 className="full-name">{editedData?.fullName}</h1>
           <p> {editedData?.position}</p>
           <p>{editedData?.city}</p>
