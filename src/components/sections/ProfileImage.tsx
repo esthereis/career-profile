@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "../../styles/picture.css";
+import "../../styles/image.css";
 import { FiEdit2 } from "react-icons/fi";
 
 export default function ProfileImage() {
@@ -32,14 +32,10 @@ export default function ProfileImage() {
     }
   }
 
-  function handleRefClick() {
-    ref.current.click();
-  }
-
   return (
-    <>
+    <div className="image-container">
       <input
-        className="input"
+        className="input centered-element"
         type="file"
         name="image"
         accept="image/png, image/gif, image/jpeg"
@@ -48,15 +44,20 @@ export default function ProfileImage() {
         }}
         ref={ref}
       />
+
       <img
         src={selectedImage}
         alt="profile-image"
-        className="profile-image"
-        onClick={() => handleRefClick()}
+        className="profile-image centered-element"
+        onClick={() => ref.current.click()}
       />
-      <button className="edit-button" onClick={() => handleRefClick()}>
+
+      <button
+        className="edit-button centered-element"
+        onClick={() => ref.current.click()}
+      >
         <FiEdit2 size={40} color="white" />
       </button>
-    </>
+    </div>
   );
 }
