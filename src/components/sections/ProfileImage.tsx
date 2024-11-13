@@ -7,7 +7,7 @@ export default function ProfileImage() {
     "https://www.kindpng.com/picc/m/548-5489417_sims-plumbob-pixel-art-hd-png-download.png"
   );
 
-  const ref: React.MutableRefObject<undefined> = useRef();
+  const ref: React.MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   function fileToDataString(file: File) {
     return new Promise<string>((resolve, reject) => {
@@ -33,13 +33,13 @@ export default function ProfileImage() {
   }
 
   function handleRefClick() {
-    ref.current.click();
+    ref.current?.click();
   }
 
   return (
-    <>
+    <div className="image-container">
       <input
-        className="input"
+        className="input absolute-position"
         type="file"
         name="image"
         accept="image/png, image/gif, image/jpeg"
@@ -51,12 +51,15 @@ export default function ProfileImage() {
       <img
         src={selectedImage}
         alt="profile-image"
-        className="profile-image"
+        className="profile-image absolute-position"
         onClick={() => handleRefClick()}
       />
-      <button className="edit-button" onClick={() => handleRefClick()}>
+      <button
+        className="edit-button absolute-position"
+        onClick={() => handleRefClick()}
+      >
         <FiEdit2 size={40} color="white" />
       </button>
-    </>
+    </div>
   );
 }

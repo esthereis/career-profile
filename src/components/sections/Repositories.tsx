@@ -10,10 +10,11 @@ import { Fragment, useEffect, useState } from "react";
 import { SlickSettings } from "../../types/SlickSettings";
 
 export default function Repositories() {
-  const [repositories, setRepositories] = useState();
+  const [repositories, setRepositories] = useState<RepositoryType[]>();
   useEffect(() => {
     getRepos().then((data) => {
       setRepositories(data);
+      console.log(data);
     });
   }, []);
 
@@ -27,7 +28,7 @@ export default function Repositories() {
 
   return (
     <div className="repositories-list">
-      <h1 className="underline">My Projects</h1>
+      <h1 className="underline">My Repositories</h1>
 
       <div>
         <Slider {...settings}>
@@ -37,8 +38,8 @@ export default function Repositories() {
                 description={repository.description}
                 name={repository.name}
                 language={repository.language}
-                stars={repository.stargazers_count}
-                fork={repository.forks}
+                stars={repository.stars}
+                forks={repository.forks}
               />
             </Fragment>
           ))}

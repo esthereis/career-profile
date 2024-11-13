@@ -1,8 +1,8 @@
 export type RepositoryType = {
   id: number;
-  description: string;
-  name: string;
-  language: string;
-  stargazers_count: number;
-  forks: number;
+  description: string | null;
+  name: string | null;
+  language?: string | null;
+  stars?: number;
+  forks?: number;
 };
