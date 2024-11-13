@@ -1,11 +1,14 @@
+import { ReactElement } from "react";
+
 type Props = {
   label: string;
   name: string;
   id: string;
   placeholder?: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  error?: string;
 };
 
 export default function Input({
@@ -16,6 +19,7 @@ export default function Input({
   value,
   onChange,
   onKeyDown,
+  error,
 }: Props) {
   return (
     <>
@@ -27,7 +31,7 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         onChange={(e) => {
-          onChange(e.target.value);
+          onChange(e);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -36,6 +40,7 @@ export default function Input({
           onKeyDown?.(e);
         }}
       />
+      <p>{error}</p>
     </>
   );
 }
