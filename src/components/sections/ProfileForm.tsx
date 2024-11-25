@@ -16,6 +16,9 @@ const validationSchema = Yup.object().shape({
     .max(25, "Name must be a maximum of 25 characters")
     .required("Name is required"),
   position: Yup.string().required("Position is required"),
+  city: Yup.string()
+    .min(3, "City must be at least 2 characters")
+    .required("City is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
 
@@ -78,6 +81,7 @@ export default function ProfileForm({ save }: Props) {
           id="city"
           value={formik.values.city}
           onChange={formik.handleChange}
+          error={formik.errors.city}
         />
 
         <Input
@@ -115,13 +119,7 @@ export default function ProfileForm({ save }: Props) {
           }
         />
 
-        <button
-          type="submit"
-          className="saveButton"
-          onClick={() => {
-            formik.submitForm();
-          }}
-        >
+        <button type="submit" className="saveButton">
           Save
         </button>
       </form>

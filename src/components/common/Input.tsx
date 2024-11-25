@@ -38,7 +38,7 @@ export default function Input({
           onKeyDown?.(e);
         }}
       />
-      <p>{error}</p>
+      <p className="error">{error}</p>
     </>
   );
 }

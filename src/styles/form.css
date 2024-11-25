@@ -39,6 +39,10 @@
   height: 1.6rem;
 }
 
+.error {
+  color: red;
+}
+
 .saveButton {
   width: 5rem;
 }
