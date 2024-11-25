@@ -1,21 +1,22 @@
 import "../../styles/certificate.css";
-import "../../styles/slick-carousel.css";
 import Certificate from "../common/Certificate";
 import Slider from "react-slick";
-import { SlickSettings } from "../../types/SlickSettings";
 
 export default function Certificates() {
-  const settings: SlickSettings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 2,
+    slidesToScroll: 2,
   };
 
   return (
     <div className="certificates-container">
-      <h1 className="underline">My Certificates</h1>
+      <div className="title">
+        <h1>My Certificates</h1>
+        <hr />
+      </div>
       <Slider {...settings}>
         <Certificate
           alt="rocketSeatImage"

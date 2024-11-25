@@ -3,14 +3,6 @@ import { GoRepoForked } from "react-icons/go";
 import "../../styles/repository.css";
 import { RepositoryType } from "../../types/RepositoryType";
 
-// type Props = {
-//   name: string;
-//   description: string;
-//   stars: number;
-//   fork: number;
-//   language: string;
-// };
-
 type Repository = Omit<RepositoryType, "id">;
 
 export default function Repository({
