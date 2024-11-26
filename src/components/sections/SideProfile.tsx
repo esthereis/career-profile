@@ -4,15 +4,23 @@ import ProfileForm from "./ProfileForm";
 import ProfileImage from "./ProfileImage";
 import ColorModal from "./ColorModal";
 import { FiLinkedin, FiMail, FiGithub, FiEdit2 } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DataType } from "../../types/DataType";
 import { IoMdColorPalette } from "react-icons/io";
 
 export default function SideProfile() {
   const [editPressed, setEditPressed] = useState<boolean>(false);
-  const [editedData, setEditedData] = useState<DataType>();
+  const [editedData, setEditedData] = useState<DataType>(() => {
+    const saved = localStorage.getItem("data");
+    const initialValue = JSON.parse(saved);
+    return initialValue;
+  });
   const [colorModalPressed, setColorModalPressed] = useState<boolean>(false);
   const [backgroundColor, setBackgroundColor] = useState<string | undefined>();
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(editedData));
+  }, [editedData]);
 
   return (
     <div style={{ backgroundColor: backgroundColor }} className="profile">
