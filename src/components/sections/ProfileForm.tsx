@@ -12,12 +12,12 @@ type Props = {
 
 const validationSchema = Yup.object().shape({
   fullName: Yup.string()
-    .min(3, "Name must be at least 2 characters")
-    .max(25, "Name must be a maximum of 25 characters")
+    .min(3, ({ min }) => `Name must be at least ${min} characters`)
+    .max(25, ({ max }) => `Name must be a maximum of ${max} characters`)
     .required("Name is required"),
   position: Yup.string().required("Position is required"),
   city: Yup.string()
-    .min(3, "City must be at least 2 characters")
+    .min(3, ({ min }) => `City must be at least ${min} characters`)
     .required("City is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
