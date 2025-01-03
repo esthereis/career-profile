@@ -1,22 +1,17 @@
 import { FiBook, FiCircle, FiStar } from "react-icons/fi";
 import { GoRepoForked } from "react-icons/go";
 import "../../styles/repository.css";
+import { RepositoryType } from "../../types/RepositoryType";
 
-type Props = {
-  name: string;
-  description: string;
-  stars: number;
-  fork: number;
-  language: string;
-};
+type Repository = Omit<RepositoryType, "id">;
 
 export default function Repository({
   name,
   description,
-  fork,
+  forks,
   stars,
   language,
-}: Props) {
+}: Repository) {
   return (
     <div className="repository-card">
       <div className="repository-title">
@@ -39,7 +34,7 @@ export default function Repository({
 
         <div className="repository-footer-info">
           <GoRepoForked size={"15"} strokeWidth={"1"} />
-          <p>{fork}</p>
+          <p>{forks}</p>
         </div>
       </div>
     </div>
