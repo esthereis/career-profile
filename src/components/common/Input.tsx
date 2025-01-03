@@ -1,36 +1,22 @@
+import { useField } from "formik";
+
 type Props = {
   label: string;
   name: string;
-  id: string;
   placeholder?: string;
-  value: string;
-  onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  error?: string;
 };
 
-export default function Input({
-  label,
-  name,
-  id,
-  placeholder,
-  value,
-  onChange,
-  onKeyDown,
-  error,
-}: Props) {
+export default function Input({ label, name, placeholder, onKeyDown }: Props) {
+  const [field, meta] = useField(name);
   return (
     <>
-      <label htmlFor="name">{label}</label>
+      <label htmlFor={name}>{label}</label>
       <input
+        {...field}
         type="text"
-        name={name}
-        id={id}
+        id={name}
         placeholder={placeholder}
-        value={value}
-        onChange={(e) => {
-          onChange(e);
-        }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             e.preventDefault();
@@ -38,7 +24,7 @@ export default function Input({
           onKeyDown?.(e);
         }}
       />
-      <p className="error">{error}</p>
+      {meta.touched && meta.error && <p className="error">{meta.error}</p>}
     </>
   );
 }
